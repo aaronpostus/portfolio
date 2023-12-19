@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Set link styles */
+.content a {
+  color: #03a9fc; /* Blue color */
+  text-decoration: none;
+}
+
+/* Add underline on hover */
+.content a:hover {
+  text-decoration: underline;
+}
+
+body {
+	font-family: 'Gill Sans', sans-serif;
+	color: white;
+	font-size: x-large;
+	margin: 0;
+	padding: 0;
+	background-color: #333;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #03a9fc;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: #242323;
+  position: relative;
+  border-radius: 6px;
+}
+/* Set the image to shrink to the size of its container */
+.content img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+/* Style for the home button */
+.home-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: #fff; /* Adjust the color as needed */
+  text-decoration: none;
+  font-size: x-large;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+
+}
+</style>
+</head>
+<body>
+<a href="index.html" class="home-button">&#8592; Home</a>
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>Unity Puzzle Games - Autumn 2023</h2>
+      <p>I designed and developed <a href="https://www.youtube.com/watch?v=EA5PAlIobvw&list=PLjBSsBYMtaRxzSvgKYxw55_NHFzq9YmrI">four short puzzle games</a> using C# and Unity. Along with programming, I created animations, 3D and 2D art assets, particle effects, and sound effects for each project. Each game was rigorously playtested to tweak mechanics and visual elements.</p>
+      <div class="img"> <img src="limbo.gif" alt="Limbo"> </div>
+    </div>
+
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Stern Gerlach Simulation - Autumn 2023</h2>
+      <p>I designed and developed <a href="https://www.youtube.com/watch?v=GjAn0ApUaGY">a prototype of an educational simulation</a> with Unity and C# that intends to teach abstract physics concepts to college students. Users place down components including magnets and detector plates and fire silver atoms through the setup.</p>
+	  <div class="img"> <img src="nodebuilder.gif" alt="SG"> </div>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>Networking File Transfer Programs - Summer 2023</h2>
+      <p>I created <a href="https://github.com/aaronpostus/cse3461">four file transfer programs</a> with Python that send files over the internet using UDP and TCP. I implemented an alternating-bit protocol that retransmits lost packets.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Clash of Clans Minecraft Plugin - Summer 2023</h2>
+      <p>I created <a href="https://www.youtube.com/watch?v=H8aE69ND6ew">a Minecraft plugin</a> using Java that transforms a multiplayer server into a recreation of the mobile game Clash of Clans. Players can build their own island, attack offline players' bases, and collect resources.</p>
+	  <div class="img"> <img src="clash.gif" alt="Minecraft"> </div>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>Einstein's Quest - Summer 2023</h2>
+      <p>I designed and developed <a href="https://www.youtube.com/watch?v=LTivver29UA">a prototype of an educational game</a> with Unity and C# that intends to teach abstract physics concepts to college students. Users play as squirrels and inspect acorns that have quantum properties.</p>
+	  <div class="img"> <img src="squirrel.gif" alt="Einstein's Quest"> </div>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Toy Interpreter and Tokenizer - Spring 2023</h2>
+      <p>I created an <a href="https://github.com/aaronpostus/CSE3341-PROJECT">interpreter and tokenizer</a> in Java for the toy language CORE. The interpreter is full-featured; it parses, pretty-prints, and executes code.</p>
+	  <div class="img"> <img src="coreprogram.png" alt="Core Program"> </div>
+	  <p>This is a sample program written in CORE that my interpreter can execute.</p>
+    </div>
+  </div>
+   <div class="container left">
+    <div class="content">
+      <h2>Vision Based Pathfinding Simulation - Spring 2023</h2>
+      <p>I created a <a href="https://www.youtube.com/watch?v=Ta7cmAsGHbw">predator and prey simulation</a> with Unity and C#. The agents use vision based pathfinding to avoid obstacles (done with raycasting). The predators will chase prey if they are within their vision.</p>
+	  <div class="img"> <img src="pathfinding.gif" alt="Pathfinding"> </div>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Isometric 3D Pacman Clone - Spring 2023</h2>
+      <p>I created a <a href="https://www.youtube.com/watch?v=mw-R_YykArE">3D Pacman clone</a> with Unity and C# on a team of three.</p>
+	  <div class="img"> <img src="pacman.gif" alt="Pacman"> </div>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>Randomized Mazes - Spring 2023</h2>
+      <p>I created a unity project that generates randomized mazes with C#. The mazes are generated with the randomized <a href="https://en.wikipedia.org/wiki/Maze_generation_algorithm">Kruskall's algorithm</a>. </p>
+	  <div class="img"> <img src="randommazes.gif" alt="Mazes"> </div>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Zelda Game Development - Autumn 2022</h2>
+      <p>I created a <a href="https://www.youtube.com/watch?v=-G9_4keyzu4">zelda game</a> with Monogame and C#. I lead a team of six students, and we planned and executed five Agile sprints. Focused on high quality code; wrote weekly code reviews. Managed tight deadlines and debugged difficult problems with peers' code.</p>
+	  <div class="img"> <img src="zeldagame.gif" alt="Zelda"> </div>
+    </div>
+  </div>
+    <div class="container left">
+    <div class="content">
+	    <h2>Relational Database Design - Summer 2022</h2>
+		<p>I designed a <a href="database.pdf"> database</a> for an imaginary client. I followed the complete design process, including creating an (E)ERD, relational schema, and functional SQL database.</p>
+		<div class="img"> <img src="eerd.png" alt="EERD"> </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
