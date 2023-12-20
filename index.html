@@ -11,9 +11,7 @@
             margin: 0;
             padding: 0;
             background-color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: center; /* Center text in the container */
         }
 
         header {
@@ -22,6 +20,7 @@
             text-align: left;
             padding: 1em;
             display: flex;
+			justify-content: space-between;
             align-items: center;
             width: 100%;
             max-width: 800px;
@@ -29,26 +28,27 @@
         }
 
         .icon-container {
-            margin-left: auto;
             display: flex;
-            align-items: center;
+            justify-content: right;
+            margin-top: 10px;
         }
 
         .icon-container a {
             margin: 0 10px;
+			justify-content: right;
             text-decoration: none;
             color: #fff;
-            display: flex;
-            align-items: center;
         }
 
         .icon-container img {
             max-width: 30px;
+			justify-content: right;
             height: auto;
         }
 
         h1 {
-            align-items: center;
+			align-items: center
+            margin: 0; /* Remove default margin for h1 */
         }
 
         main {
@@ -68,11 +68,18 @@
             height: auto;
             margin-right: 20px;
             padding-right: 50px;
+            order: 1; /* Set default order to 1 */
         }
 
         .text-container {
             flex: 1;
             background-color: #333;
+            order: 2; /* Set default order to 2 */
+        }
+
+        .text-container p {
+            margin: 0; /* Remove default paragraph margin */
+            text-align: left; /* Align text to the left */
         }
 
         .text-container a {
@@ -90,6 +97,29 @@
             background-color: #333;
             color: #fff;
         }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 600px) {
+            header {
+                order: 0; /* Set order to 0 for mobile */
+            }
+
+            .icon-container {
+                justify-content: center; /* Center icons on mobile */
+                order: 1; /* Set order to 1 for mobile */
+            }
+
+            img {
+                order: 2; /* Change order for mobile to 2 */
+                margin-right: 0;
+                padding-right: 0;
+                margin-bottom: 10px; /* Add space between image and text on mobile */
+            }
+
+            .text-container {
+                order: 3; /* Change order for mobile to 3 */
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,11 +127,9 @@
     <header>
         <h1>Aaron Post</h1>
         <div class="icon-container">
-            <!-- Replace the URLs with your actual social media or portfolio links -->
             <a href="https://github.com/aaronpostus" target="_blank"><img src="github-logo.png" alt="GitHub"></a>
             <a href="https://www.linkedin.com/in/aaron-post-43271426a/" target="_blank"><img src="linkedin-logo.png" alt="LinkedIn"></a>
             <a href="apresume.pdf" target="_blank"><img src="resume.png" alt="Resume"></a>
-            <!-- Add more icons and links as needed -->
         </div>
     </header>
 
