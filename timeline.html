@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script>
+	function toggleText(element) {
+		var actualText = element.querySelector('.actual-text');
+		actualText.style.display = (actualText.style.display === 'none' || actualText.style.display === '') ? 'block' : 'none';
+	}
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 * {
@@ -47,6 +53,41 @@ body {
   bottom: 0;
   left: 50%;
   margin-left: -3px;
+}
+
+.hidden-text {
+    position: relative;
+    overflow: hidden; /* Ensure overflow does not affect layout */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the color and transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1; /* Ensure the overlay is above other content */
+}
+
+.text-overlay {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+.actual-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 2; /* Ensure the actual text is above the overlay */
 }
 
 /* Container around content */
@@ -177,11 +218,19 @@ body {
 <div class="timeline">
   <div class="container left">
     <div class="content">
-      <h2>Unity Puzzle Games - Autumn 2023</h2>
-      <p>I designed and developed <a href="https://www.youtube.com/watch?v=EA5PAlIobvw&list=PLjBSsBYMtaRxzSvgKYxw55_NHFzq9YmrI">four short puzzle games</a> using C# and Unity. Along with programming, I created animations, 3D and 2D art assets, particle effects, and sound effects for each project. Each game was rigorously playtested to tweak mechanics and visual elements.</p>
-      <div class="img"> <img src="limbo.gif" alt="Limbo"> </div>
-    </div>
+	   <h2>Unity Puzzle Games - Autumn 2023</h2>
+	   <p>I designed and developed <a href="https://www.youtube.com/watch?v=EA5PAlIobvw&list=PLjBSsBYMtaRxzSvgKYxw55_NHFzq9YmrI">four short puzzle games</a> using C# and Unity. Along with programming, I created animations, 3D and 2D art assets, particle effects, and sound effects for each project. Each game was rigorously playtested to tweak mechanics and visual elements.
+	   </p>
+	   <div class="img"> <img src="limbo.gif" alt="Limbo"> </div>
 
+	   <!-- Hidden text -->
+	    <div class="overlay hidden-text" onclick="toggleText(this)">
+			<div class="text-overlay">Click to reveal text</div>
+			<div class="actual-text">
+				<p>This is the additional text that will be revealed when clicked.</p>
+			</div>
+		</div>
+	</div>
   </div>
   <div class="container right">
     <div class="content">
