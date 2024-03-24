@@ -1,161 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaron Post</title>
-    <style>
-        /* Common styles */
-        body {
-            font-family: 'Gill Sans', sans-serif;
-            color: white;
-            margin: 0;
-            padding: 0;
-            background-color: #333;
-            text-align: center;
-            font-size: 1.5em;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaron Post</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: left;
-            padding: 1em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
+    /* Common styles */
+    body {
+      font-family: 'Gill Sans', sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+      text-align: center;
+      font-size: 1.5em;
+    }
 
-        .title-container {
-            display: flex;
-            align-items: center;
-        }
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: left;
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
 
-        .icon-container {
-            display: flex;
-            margin-top: 10px;
-        }
+    .title-container {
+      display: flex;
+      align-items: center;
+    }
 
-        .icon-container a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #fff;
-        }
+    .icon-container {
+      display: flex;
+      margin-top: 10px;
+    }
 
-        .icon-container img {
-            max-width: 30px;
-            height: auto;
-        }
+    .icon-container a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+    }
 
-        h1 {
-            margin: 0;
-            font-size: 2em;
-        }
+    .icon-container img {
+      max-width: 30px;
+      height: auto;
+    }
 
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #333;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
-        }
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
 
-        img {
-            max-width: 300px;
-            height: auto;
-            margin-right: 20px;
-            padding-right: 50px;
-        }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #333;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
 
-        .text-container {
-            flex: 1;
-            background-color: #333;
-        }
+    .main-container {
+      display: flex;
+      max-width: 800px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      margin: 0 auto;
+    }
 
-        .text-container p {
-            margin: 0;
-            text-align: left;
-        }
+    img {
+      max-width: 300px;
+      height: auto;
+    }
 
-        .text-container a {
-            color: #03a9fc;
-            text-decoration: none;
-        }
+    .text-container {
+      width: 60%;
+      background-color: #333;
+    }
 
-        .text-container a:hover {
-            text-decoration: underline;
-        }
+    .text-container p {
+      margin: 0;
+      text-align: left;
+      padding: 20px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-        }
+    .text-container a {
+      color: #03a9fc;
+      text-decoration: none;
+    }
 
-        /* Media Query for Mobile Devices */
-        @media (max-width: 600px) {
-			 header {
-				text-align: center;
-			 }
-		
-			.text-container p {
-				margin: 0;
-				text-align: center;
-			}
-		
-            .title-container {
-                order: 1;
-                width: 100%;
-                text-align: center;
-            }
-			.body {}
+    .text-container a:hover {
+      text-decoration: underline;
+    }
 
-            .icon-container {
-                order: 2;
-                justify-content: center;
-                width: 100%;
-                margin-top: 10px;
-            }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+    }
 
-            .icon-container a {
-                margin: 0 10px;
-            }
+    .img-container {
+      width: 40%;
+    }
 
-            main {
-                order: 3;
-                text-align: center; /* Center-aligning the main content */
-            }
-        }
-    </style>
+    /* Media Query for Mobile Devices */
+    @media (max-width: 600px) {
+      header {
+        text-align: center;
+      }
+
+      .text-container {
+        width: 100%;
+      }
+
+      .img-container {
+        width: 100%;
+      }
+
+      .text-container p {
+        margin: 0;
+        text-align: center;
+        padding: 0px 15px;
+        font-size: 1.2rem;
+      }
+
+      .title-container {
+        order: 1;
+        width: 100%;
+        text-align: center;
+      }
+
+      .body {}
+
+      .icon-container {
+        order: 2;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .icon-container a {
+        margin: 0 10px;
+      }
+
+      .main-container {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-<body>
 
-<header>
+<body>
+  <header>
     <div class="title-container">
-        <h1>Aaron Post</h1>
+      <h1>Aaron Post</h1>
     </div>
     <div class="icon-container">
-        <a href="https://github.com/aaronpostus" target="_blank"><img src="github-logo.png" alt="GitHub"></a>
-        <a href="https://www.linkedin.com/in/aaron-post-43271426a/" target="_blank"><img src="linkedin-logo.png" alt="LinkedIn"></a>
-        <a href="apresume.pdf" target="_blank"><img src="resume.png" alt="Resume"></a>
+      <a href="https://github.com/aaronpostus" target="_blank"><img src="github-logo.png" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/aaron-post-43271426a/" target="_blank"><img src="linkedin-logo.png"
+          alt="LinkedIn"></a>
+      <a href="apresume.pdf" target="_blank"><img src="resume.png" alt="Resume"></a>
     </div>
-</header>
+  </header>
 
-<main>
-    <img src="me.png" alt="Aaron Post">
+
+  <div class="main-container">
+    <div class="img-container">
+      <img src="me.png" alt="Aaron Post">
+    </div>
     <div class="text-container">
-        <p>Hello! My name is Aaron Post, and I'm a fourth-year <a href="https://cse.osu.edu/current-students/undergraduate/majors/bachelor-science-computer-information-science-bs-cis">Computer Science</a> student completing my degree at The Ohio State University. I have a passion for building high-quality software, and I am particularly skilled with OOP design with languages such as C# and Java. I am familiar with many languages, and I am always eager to learn.<br><br>I have many <a href="timeline.html">side projects</a> including games and projects from school.</p>
+      <p>Hello! My name is Aaron Post, and I'm a fourth-year <a
+          href="https://cse.osu.edu/current-students/undergraduate/majors/bachelor-science-computer-information-science-bs-cis">Computer
+          Science</a> student completing my degree at The Ohio State University. I have a passion for building
+        high-quality software, and I am particularly skilled with OOP design with languages such as C# and Java. I am
+        familiar with many languages, and I am always eager to learn.<br><br>I have many <a href="timeline.html">side
+          projects</a> including games and projects from school.</p>
     </div>
-</main>
-
+  </div>
+  </div>
 </body>
+
 </html>
