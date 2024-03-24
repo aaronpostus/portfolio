@@ -73,7 +73,7 @@
         .text-container {
             flex: 1;
             background-color: #333;
-            order: 2;
+            order: 3;
         }
 
         .text-container p {
@@ -99,33 +99,21 @@
 
         /* Media Query for Mobile Devices */
         @media (max-width: 600px) {
-            header {
-                order: 0;
-            }
-
             .icon-container {
-                justify-content: center;
-                order: 1;
+                flex-direction: column;
+                align-items: center;
+                order: 2;
             }
 
             img {
-                order: 2;
+                order: 1;
+                margin-bottom: 10px;
                 margin-right: 0;
                 padding-right: 0;
-                margin-bottom: 10px;
             }
 
             .text-container {
                 order: 3;
-				font-size: 1.5em;
-            }
-
-            h1 {
-                font-size: 1.5em;
-            }
-
-            body {
-                font-size: medium;
             }
         }
     </style>
