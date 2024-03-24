@@ -101,6 +101,7 @@
         @media (max-width: 600px) {
 			body {
 				font-size: 1em;
+				align-items: center;
 			}
             header {
                 flex-direction: column;
@@ -109,11 +110,21 @@
 
             main {
                 order: 2;
+                text-align: center; /* Center-aligning the main content */
             }
 
             .icon-container {
                 justify-content: center;
                 margin-top: 10px;
+            }
+
+            img {
+                margin: 0 auto; /* Center-aligning the image */
+            }
+
+            .text-container {
+                order: 3;
+                text-align: center; /* Center-aligning the text */
             }
         }
     </style>
