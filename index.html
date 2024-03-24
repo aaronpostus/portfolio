@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron Post</title>
     <style>
+        /* Common styles */
         body {
             font-family: 'Gill Sans', sans-serif;
             color: white;
-            font-size: x-large;
             margin: 0;
             padding: 0;
             background-color: #333;
-            text-align: center; /* Center text in the container */
+            text-align: center;
+			font-size: 1.5em;
         }
 
         header {
@@ -20,7 +22,7 @@
             text-align: left;
             padding: 1em;
             display: flex;
-			justify-content: space-between;
+            justify-content: space-between;
             align-items: left;
             width: 100%;
             max-width: 800px;
@@ -29,26 +31,23 @@
 
         .icon-container {
             display: flex;
-
             margin-top: 10px;
         }
 
         .icon-container a {
             margin: 0 10px;
-
             text-decoration: none;
             color: #fff;
         }
 
         .icon-container img {
             max-width: 30px;
-			justify-content: right;
             height: auto;
         }
 
         h1 {
-			align-items: center;
-            margin: 0; /* Remove default margin for h1 */
+            margin: 0;
+			font-size: 2em;
         }
 
         main {
@@ -68,18 +67,18 @@
             height: auto;
             margin-right: 20px;
             padding-right: 50px;
-            order: 1; /* Set default order to 1 */
+            order: 1;
         }
 
         .text-container {
             flex: 1;
             background-color: #333;
-            order: 2; /* Set default order to 2 */
+            order: 2;
         }
 
         .text-container p {
-            margin: 0; /* Remove default paragraph margin */
-            text-align: left; /* Align text to the left */
+            margin: 0;
+            text-align: left;
         }
 
         .text-container a {
@@ -100,41 +99,33 @@
 
         /* Media Query for Mobile Devices */
         @media (max-width: 600px) {
-		    body {
-				font-family: 'Gill Sans', sans-serif;
-				color: white;
-				font-size: medium;
-				margin: 0;
-				padding: 0;
-				background-color: #333;
-				text-align: center; /* Center text in the container */
-			}
             header {
-                order: 0; /* Set order to 0 for mobile */
-				background-color: #333;
-				color: #fff;
-				text-align: left;
-				padding: 1em;
-				align-items: center;
-				width: 100%;
-				max-width: 800px;
-				margin: 0 auto;
-			}
+                order: 0;
+            }
 
             .icon-container {
-                justify-content: center; /* Center icons on mobile */
-                order: 1; /* Set order to 1 for mobile */
+                justify-content: center;
+                order: 1;
             }
 
             img {
-                order: 2; /* Change order for mobile to 2 */
+                order: 2;
                 margin-right: 0;
                 padding-right: 0;
-                margin-bottom: 10px; /* Add space between image and text on mobile */
+                margin-bottom: 10px;
             }
 
             .text-container {
-                order: 3; /* Change order for mobile to 3 */
+                order: 3;
+				font-size: 1.5em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            body {
+                font-size: medium;
             }
         }
     </style>
