@@ -177,7 +177,6 @@ body {
   color: #fff; /* Adjust the color as needed */
   text-decoration: none;
   font-size: x-large;
-  z-index: 1000; /* Ensure it's above other content */
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -221,7 +220,7 @@ body {
 
   /* Move container-right to the right to make room for the home button */
   .container.right {
-    padding-right: 60px; /* Adjust as needed */
+    padding-right: 50px; /* Adjust as needed */
   }
 
   /* Position the home button */
@@ -231,7 +230,10 @@ body {
     left: 10px;
     color: #fff; /* Adjust the color as needed */
     text-decoration: none;
-    font-size: medium;
+    font-size: x-large;
+    background-color: rgba(0, 0, 0, 1); /* Semi-transparent black background */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 5px; /* Rounded corners */
     z-index: 2; /* Ensure it's above container-right */
   }
 }
